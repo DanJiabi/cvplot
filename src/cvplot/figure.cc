@@ -778,12 +778,12 @@ void Figure::draw(void *b, double x_min, double x_max, double y_min,
   }
 }
 
-void Figure::setRange(int x[2], int y[2]) {
+void Figure::setRange(int x[], int y[]) {
   x_range[0] = x[0], x_range[1] = x[1];
   y_range[0] = y[0], y_range[1] = y[1];
 }
 
-void Figure::setXRange(int x[2]) {
+void Figure::setXRange(int x[]) {
   x_range[0] = x[0], x_range[1] = x[1];
 }
 

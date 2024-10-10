@@ -145,9 +145,9 @@ class Figure {
   auto drawFile(const std::string &filename, Size size) const -> bool;
   void show(bool flush = true) const;
   auto series(const std::string &label) -> Series &;
-  void setRange(int x[2], int y[2]);
-  void setXRange(int x[2]);
-  void setYRange(int y[2]);
+  void setRange(int x[], int y[]);
+  void setXRange(int x[]);
+  void setYRange(int y[]);
 
  protected:
   View &view_;
