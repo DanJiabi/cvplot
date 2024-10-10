@@ -793,7 +793,8 @@ auto Figure::drawFit(void *buffer) const -> int {
   }
 
   if (n_max != 0) {
-    draw(buffer, x_min, x_max, y_min, y_max, n_max, p_max);
+    // draw(buffer, x_min, x_max, y_min, y_max, n_max, p_max);
+    draw(buffer, -12, 12, -5, 180, n_max, p_max);
   }
 
   return n_max;
