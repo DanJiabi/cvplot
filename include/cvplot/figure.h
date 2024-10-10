@@ -120,7 +120,9 @@ class Figure {
         include_zero_y_(true),
         aspect_square_(false),
         grid_size_(60),
-        grid_padding_(20) {}
+        grid_padding_(20),
+        x_range({0, 0}),
+        y_range({0, 0}) {}
 
   auto clear() -> Figure &;
   auto origin(bool x, bool y) -> Figure &;
@@ -143,6 +145,9 @@ class Figure {
   auto drawFile(const std::string &filename, Size size) const -> bool;
   void show(bool flush = true) const;
   auto series(const std::string &label) -> Series &;
+  void setRange(int x[2], int y[2]);
+  void setXRange(int x[2]);
+  void setYRange(int y[2]);
 
  protected:
   View &view_;
@@ -157,6 +162,8 @@ class Figure {
   bool aspect_square_;
   int grid_size_;
   int grid_padding_;
+  int x_range[2];
+  int y_range[2];
 };
 
 auto figure(const std::string &name) -> Figure &;

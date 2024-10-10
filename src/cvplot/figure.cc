@@ -778,6 +778,19 @@ void Figure::draw(void *b, double x_min, double x_max, double y_min,
   }
 }
 
+void Figure::setRange(int x[2], int y[2]) {
+  x_range[0] = x[0], x_range[1] = x[1];
+  y_range[0] = y[0], y_range[1] = y[1];
+}
+
+void Figure::setXRange(int x[2]) {
+  x_range[0] = x[0], x_range[1] = x[1];
+}
+
+void Figure::setYRange(int y[2]) {
+  y_range[0] = y[0], y_range[1] = y[1];
+}
+
 auto Figure::drawFit(void *buffer) const -> int {
   auto x_min = (include_zero_x_ ? 0. : FLT_MAX);
   auto x_max = (include_zero_x_ ? 0. : FLT_MIN);
@@ -794,7 +807,8 @@ auto Figure::drawFit(void *buffer) const -> int {
 
   if (n_max != 0) {
     // draw(buffer, x_min, x_max, y_min, y_max, n_max, p_max);
-    draw(buffer, -12, 12, -5, 180, n_max, p_max);
+    draw(buffer, x_range[0] == 0 ? x_min : x_range[0], x_range[1] == 0 ? x_max : x_range[1],
+      y_range[0] == 0 ? y_min : y_range[0], y_range[1] == 0 ? y_max : y_range[1], n_max, p_max);
   }
 
   return n_max;
