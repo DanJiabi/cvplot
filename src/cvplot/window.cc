@@ -308,7 +308,7 @@ void Window::flush() {
       cv::setWindowTitle(name_, title_);
 #endif
       cv::imshow(name_, *b);
-      Util::sleep();
+      // Util::sleep();
     }
   }
   dirty_ = false;
