@@ -127,7 +127,7 @@ class Window {
 class Util {
  public:
   static void sleep(double seconds = 0);
-  static auto key(double timeout = 0) -> int;
+  static auto key(int timeout = 0) -> int;
   static auto line(double timeout = 0) -> std::string;
 };
 

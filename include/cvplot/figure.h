@@ -145,6 +145,8 @@ class Figure {
   auto drawFile(const std::string &filename, Size size) const -> bool;
   void show(bool flush = true) const;
   auto series(const std::string &label) -> Series &;
+
+  // 2024 - 10 - 10
   void setRange(int x[2], int y[2]);
   void setXRange(int x[2]);
   void setYRange(int y[2]);
@@ -162,6 +164,8 @@ class Figure {
   bool aspect_square_;
   int grid_size_;
   int grid_padding_;
+
+  // 2024 - 10 - 10
   int x_range[2];
   int y_range[2];
 };

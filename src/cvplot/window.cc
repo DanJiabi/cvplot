@@ -358,8 +358,9 @@ void Util::sleep(double seconds) {
   cv::waitKey(std::max(1, static_cast<int>(seconds * 1000)));
 }
 
-auto Util::key(double timeout) -> int {
-  return cv::waitKey(std::max(0, static_cast<int>(timeout * 1000)));
+auto Util::key(int timeout) -> int {
+  // return cv::waitKey(std::max(0, static_cast<int>(timeout * 1000)));
+  return cv::waitKey(std::max(0, static_cast<int>(timeout)));
 }
 
 auto Util::line(double timeout) -> std::string {
