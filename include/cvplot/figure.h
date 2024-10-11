@@ -121,8 +121,8 @@ class Figure {
         aspect_square_(false),
         grid_size_(60),
         grid_padding_(20),
-        x_range({0, 0}),
-        y_range({0, 0}) {}
+        x_range{0, 0},
+        y_range{0, 0} {}
 
   auto clear() -> Figure &;
   auto origin(bool x, bool y) -> Figure &;
